@@ -1,4 +1,4 @@
-package com.fyrl29074.network.repository
+package com.fyrl29074.network.dataSources
 
 import com.fyrl29074.network.api.ProductsApi
 import com.fyrl29074.network.model.ProductDto

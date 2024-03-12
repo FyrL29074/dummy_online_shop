@@ -15,5 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "dummy_online_shop"
 include(":app")
-include(":network")
 include(":feature:productsList")
+include(":navigation")
+include(":network")
