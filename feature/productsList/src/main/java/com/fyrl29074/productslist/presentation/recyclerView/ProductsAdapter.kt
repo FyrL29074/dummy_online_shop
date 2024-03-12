@@ -1,6 +1,7 @@
 package com.fyrl29074.productslist.presentation.recyclerView
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

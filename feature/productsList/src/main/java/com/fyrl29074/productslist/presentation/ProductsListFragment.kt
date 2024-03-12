@@ -1,6 +1,7 @@
 package com.fyrl29074.productslist.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,12 @@ class ProductsListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initUi()
+        initFlow()
+    }
+
+    private fun initUi() {
+        binding.products.adapter = productsAdapter
     }
 
     private fun initFlow() {
@@ -59,7 +66,13 @@ class ProductsListFragment : Fragment() {
                 ).show()
             }
 
-            is State.Waiting -> Unit
+            is State.Waiting -> {
+                viewModel.getProductsByPage(FIRST_PAGE)
+            }
         }
+    }
+
+    companion object {
+        private const val FIRST_PAGE = 1
     }
 }

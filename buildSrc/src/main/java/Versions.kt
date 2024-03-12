@@ -1,6 +1,7 @@
 object Versions {
     object Retrofit {
         const val retrofit_version = "2.9.0"
+        const val okHttp_version = "4.12.0"
     }
 
     object AndroidX {

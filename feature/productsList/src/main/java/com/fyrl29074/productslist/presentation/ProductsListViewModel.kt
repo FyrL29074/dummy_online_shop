@@ -2,13 +2,13 @@ package com.fyrl29074.productslist.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.fyrl29074.productslist.domain.useCase.GetProductsByPageUseCaseImpl
+import com.fyrl29074.productslist.domain.useCase.GetProductsByPageUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class ProductsListViewModel(
-    private val getProductsByPageUseCase: GetProductsByPageUseCaseImpl,
+    private val getProductsByPageUseCase: GetProductsByPageUseCase,
 ) : ViewModel() {
     private val _state = MutableStateFlow<State>(State.Waiting)
     val state = _state.asStateFlow()

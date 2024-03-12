@@ -37,4 +37,6 @@ dependencies {
     implementation(Deps.Koin.koin_android)
     implementation(Deps.Retrofit.retrofit)
     implementation(Deps.Retrofit.retrofit_gson)
+    implementation(Deps.Retrofit.okHttp)
+    implementation(Deps.Retrofit.logging_interceptor)
 }

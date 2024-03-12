@@ -3,6 +3,10 @@ object Deps {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.Retrofit.retrofit_version}"
         const val retrofit_gson =
             "com.squareup.retrofit2:converter-gson:${Versions.Retrofit.retrofit_version}"
+
+        const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.Retrofit.okHttp_version}"
+        const val logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.Retrofit.okHttp_version}"
+
     }
 
     object AndroidX {
