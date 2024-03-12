@@ -1,7 +1,6 @@
 package com.fyrl29074.productslist.presentation
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +10,15 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.fyrl29074.productslist.databinding.FragmentProductsListBinding
 import com.fyrl29074.productslist.presentation.recyclerView.ProductsAdapter
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProductsListFragment : Fragment() {
 
-    private lateinit var binding: FragmentProductsListBinding
+    private var _binding: FragmentProductsListBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: ProductsListViewModel by viewModel()
     private val productsAdapter = ProductsAdapter()
 
@@ -24,7 +26,7 @@ class ProductsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentProductsListBinding.inflate(inflater, container, false)
+        _binding = FragmentProductsListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -54,7 +56,9 @@ class ProductsListFragment : Fragment() {
 
             is State.Loaded -> {
                 binding.progressBar.isVisible = false
-                productsAdapter.updateProducts(state.data)
+                viewModel.pagedProducts.onEach { products ->
+                    productsAdapter.submitData(products)
+                }.launchIn(viewLifecycleOwner.lifecycleScope)
             }
 
             is State.Error -> {
@@ -70,6 +74,11 @@ class ProductsListFragment : Fragment() {
                 viewModel.getProductsByPage(FIRST_PAGE)
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     companion object {

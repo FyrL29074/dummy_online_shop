@@ -9,6 +9,7 @@ object Versions {
         const val android_core_version = "1.9.0"
         const val recycler_view_version = "1.3.2"
         const val constraint_layout_version = "2.1.4"
+        const val paging_version = "3.2.1"
     }
 
     object Lifecycle {

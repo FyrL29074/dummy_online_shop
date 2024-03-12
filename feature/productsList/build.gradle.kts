@@ -41,6 +41,7 @@ dependencies {
     implementation(Deps.AndroidX.app_compat)
     implementation(Deps.AndroidX.recycler_view)
     implementation(Deps.AndroidX.constraint_layout)
+    implementation(Deps.AndroidX.paging_runtime)
     implementation(Deps.Lifecycle.lifecycle_runtime_ktx)
     implementation(Deps.Lifecycle.lifecycle_viewmodel_ktx)
     implementation(Deps.Glide.glide)

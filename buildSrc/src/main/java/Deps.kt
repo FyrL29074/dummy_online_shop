@@ -17,6 +17,8 @@ object Deps {
             "androidx.recyclerview:recyclerview:${Versions.AndroidX.recycler_view_version}"
         const val constraint_layout =
             "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.constraint_layout_version}"
+        const val paging_runtime =
+            "androidx.paging:paging-runtime:${Versions.AndroidX.paging_version}"
     }
 
     object Lifecycle {
