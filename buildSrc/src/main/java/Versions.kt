@@ -21,4 +21,8 @@ object Versions {
     object Koin {
         const val koin_android_version = "3.5.3"
     }
+
+    object NavComponent {
+        const val nav_version = "2.7.7"
+    }
 }

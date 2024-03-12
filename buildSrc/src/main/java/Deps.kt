@@ -29,4 +29,9 @@ object Deps {
     object Koin {
         const val koin_android = "io.insert-koin:koin-android:${Versions.Koin.koin_android_version}"
     }
+
+    object NavComponent {
+        val nav_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:${Versions.NavComponent.nav_version}"
+        val nav_ui_ktx = "androidx.navigation:navigation-ui-ktx:${Versions.NavComponent.nav_version}"
+    }
 }
