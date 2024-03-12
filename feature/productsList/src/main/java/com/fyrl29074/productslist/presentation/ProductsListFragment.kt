@@ -32,11 +32,11 @@ class ProductsListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initUi()
+        initUI()
         initFlow()
     }
 
-    private fun initUi() {
+    private fun initUI() {
         binding.products.adapter = productsAdapter
     }
 
@@ -66,7 +66,7 @@ class ProductsListFragment : Fragment() {
                 Toast.makeText(
                     requireContext(),
                     state.message,
-                    Toast.LENGTH_SHORT
+                    Toast.LENGTH_LONG
                 ).show()
             }
 
@@ -82,6 +82,6 @@ class ProductsListFragment : Fragment() {
     }
 
     companion object {
-        private const val FIRST_PAGE = 1
+        private const val FIRST_PAGE = 0
     }
 }

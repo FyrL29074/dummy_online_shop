@@ -29,6 +29,6 @@ class ProductsPagingSource(
     }
 
     companion object {
-        private const val FIRST_PAGE = 1
+        private const val FIRST_PAGE = 0
     }
 }

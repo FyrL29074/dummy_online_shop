@@ -21,7 +21,7 @@ class ProductsListViewModel(
     val state = _state.asStateFlow()
 
     val pagedProducts: Flow<PagingData<Product>> = Pager(
-        config = PagingConfig(pageSize = 20),
+        config = PagingConfig(pageSize = PAGE_SIZE),
         pagingSourceFactory = { ProductsPagingSource(getProductsByPageUseCase) }
     ).flow.cachedIn(viewModelScope)
 
@@ -40,5 +40,9 @@ class ProductsListViewModel(
                 }
             )
         }
+    }
+
+    companion object {
+        private const val PAGE_SIZE = 20
     }
 }
